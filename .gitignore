@@ -1,0 +1,12 @@
+# Compiled from index.ts
+index.js
+
+# Lock files
+yarn.lock
+package-lock.json
+
+# Development files
+node_modules/**
+
+# Compiled from TypeScript
+dist/**

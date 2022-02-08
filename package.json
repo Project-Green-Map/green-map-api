@@ -1,0 +1,26 @@
+{
+  "name": "green-map-api",
+  "version": "1.0.0",
+  "description": "A RESTful for the Green Map Project, a student project from the University of Cambridge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linusyh/green-map-api.git"
+  },
+  "keywords": [
+    "university"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linusyh/green-map-api/issues"
+  },
+  "homepage": "https://github.com/linusyh/green-map-api#readme",
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^2.1.1",
+    "typescript": "^4.5.5"
+  }
+}

@@ -1,0 +1,13 @@
+{
+    "extends": "@tsconfig/node16/tsconfig.json",
+    "include": ["functions/**/*"],
+    "compilerOptions": {
+        "outDir": "dist",
+        "rootDir": "./functions"
+    },
+    "watchOptions": {
+        "watchFile": "useFsEvents",
+        "watchDirectory": "dynamicprioritypolling",
+        "fallbackPolling": "dynamicpriority"
+    }
+}

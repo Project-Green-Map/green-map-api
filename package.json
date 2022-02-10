@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx functions-framework --target=cloudFunction",
-    "build": "npx tsc && npx tsc index.ts"
+    "build": "npx tsc && npx tsc index.ts --esModuleInterop true"
   },
   "repository": {
     "type": "git",

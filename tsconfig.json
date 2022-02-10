@@ -3,7 +3,7 @@
     "include": ["functions/**/*"],
     "compilerOptions": {
         "outDir": "dist",
-        "rootDir": ".",
+        "rootDir": "./functions",
         "resolveJsonModule": true
     },
     "watchOptions": {

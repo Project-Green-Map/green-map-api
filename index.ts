@@ -1,1 +1,1 @@
-export {runThisFunction as cloudFunction} from "./functions/helloWorld";
+export {runThisFunction as cloudFunction} from "./dist/helloWorld";

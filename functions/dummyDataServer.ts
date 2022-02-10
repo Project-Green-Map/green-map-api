@@ -1,5 +1,4 @@
 import express from "express";
-import {G_DIRECTION_KEY} from "./common";
 
 import bicycling_exp from "./dummyData/bicycling.json";
 import driving_exp from "./dummyData/driving.json";

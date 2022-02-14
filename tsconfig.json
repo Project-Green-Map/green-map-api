@@ -1,13 +1,10 @@
 {
     "extends": "@tsconfig/node16/tsconfig.json",
-    "include": ["functions/**/*"],
+    "include": ["src/**/*"],
     "exclude": ["node_modules"],
     "compilerOptions": {
-        "module": "commonjs",
-        "esModuleInterop": true,
-        "target": "es6",
         "outDir": "dist",
-        "rootDir": "./functions"
+        "rootDir": "./src"
     },
     "watchOptions": {
         "watchFile": "useFsEvents",

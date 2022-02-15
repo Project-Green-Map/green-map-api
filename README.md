@@ -37,7 +37,14 @@ The tools will download and install the packages needed to start developing.
 ├── tsconfig.json         # TypeScript compiler configuration
 └── README.md
 ```
+## Google Maps API key
 
+Google Maps Platform requires credentials in form of an API key. It can be obtained by following instructions: https://developers.google.com/maps/documentation/javascript/get-api-key
+
+Create a `.env` file in the folder src:
+```
+JS_API_KEY="YOURAPIKEY"
+``` 
 
 ## Build
 TypeScript must be compiled to JavaScript before we can run the project:

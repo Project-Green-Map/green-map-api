@@ -1,9 +1,9 @@
 {
     "extends": "@tsconfig/node16/tsconfig.json",
-    "include": ["functions/**/*"],
+    "include": ["src"],
     "compilerOptions": {
         "outDir": "dist",
-        "rootDir": "./functions",
+        "rootDir": "./src",
         "resolveJsonModule": true
     },
     "watchOptions": {

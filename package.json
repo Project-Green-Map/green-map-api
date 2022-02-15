@@ -2,10 +2,10 @@
   "name": "green-map-api",
   "version": "1.0.0",
   "description": "A RESTful for the Green Map Project, a student project from the University of Cambridge",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "npx functions-framework --target=cloudFunction",
-    "build": "npx tsc && npx tsc index.ts --esModuleInterop true"
+    "build": "npx tsc"
   },
   "repository": {
     "type": "git",

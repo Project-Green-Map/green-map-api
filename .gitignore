@@ -7,6 +7,7 @@ package-lock.json
 
 # Development files
 node_modules/**
+.env
 
 # Compiled from TypeScript
 dist/**

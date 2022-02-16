@@ -5,7 +5,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "test": "npx functions-framework --target=cloudFunction",
-    "build": "npx tsc && cp ./src/.env ./dist"
+    "build": "npx tsc"
   },
   "repository": {
     "type": "git",

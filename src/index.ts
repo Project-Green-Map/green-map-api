@@ -1,1 +1,1 @@
-export {runThisFunction as cloudFunction} from "./functions/simpleServer1";
+export {runThisFunction as cloudFunction} from "./functions/actualServer";

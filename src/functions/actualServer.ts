@@ -1,7 +1,6 @@
 import express from "express";
 import {Client, TravelMode, TransitMode, DirectionsRequest, DirectionsResponseData} from "@googlemaps/google-maps-services-js";
-import { privateEncrypt } from "crypto";
-// import {JS_API_KEY} from './getKey'
+import axios from "axios";
 
 const dotenv = require('dotenv').config();
 const JS_API_KEY = process.env.JS_API_KEY
@@ -101,7 +100,6 @@ export function runThisFunction (req: express.Request, res: express.Response) {
     }
 
     console.log(_params);
-
     
     const client = new Client({})
 
@@ -109,14 +107,13 @@ export function runThisFunction (req: express.Request, res: express.Response) {
         params: _params,
         timeout: 10000
     }).then((g_res) => {
-        var output: CarbonResponseData = g_res.data;
-
-        if (g_res.status === 200) {
-            let n_routes = output.routes.length;
-            let random_carbons = Array.from({length: n_routes}, () => Math.random()*100);
-            output.carbon = random_carbons;
-        }
-
-        res.json(output);
-    })
+        let path_data: CarbonResponseData = g_res.data;
+        axios.post(process.env.MR_CARBON_URL!, path_data)
+        .then((carbon_footprints) => {
+            path_data.carbon = carbon_footprints.data;
+            console.log("Mr Carbon says: " + carbon_footprints.data);
+            res.json(path_data);
+        });
+        return path_data;
+    });
 }

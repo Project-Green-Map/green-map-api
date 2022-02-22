@@ -27,7 +27,8 @@ function lookupTransitMode (transit_mode: string) {
 }
 
 interface CarbonResponseData extends DirectionsResponseData {
-    carbon?: number[]
+    carbon?: number[],
+    vehicle_info?: any
 }
 
 export function runThisFunction (req: express.Request, res: express.Response) {
@@ -108,10 +109,22 @@ export function runThisFunction (req: express.Request, res: express.Response) {
         timeout: 10000
     }).then((g_res) => {
         let path_data: CarbonResponseData = g_res.data;
+        /*
+        console.log(req.get('Content-Type'));
+        console.log(req.body);
+        */
+
+        let content_type_regex = /application\/json.*;.*/;
+        
+        if (req.body && content_type_regex.test(req.get('Content-Type')!)) {
+            path_data.vehicle_info = req.body;
+            console.log("Received client info:");
+            console.log(path_data.vehicle_info)
+        }
+
         axios.post(process.env.MR_CARBON_URL!, path_data)
         .then((carbon_footprints) => {
             path_data.carbon = carbon_footprints.data;
-            console.log("Mr Carbon says: " + carbon_footprints.data);
             res.json(path_data);
         });
         return path_data;
